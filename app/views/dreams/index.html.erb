@@ -1,2 +1,7 @@
-<h1>Dreams#index</h1>
-<p>Find me in app/views/dreams/index.html.erb</p>
+<h1>All Dreams</h1>
+<% @dreams.each do |dream|  %>
+<%= dream.title %>
+<%= dream.description %>
+<%= dream.user_id %>
+<% end  %>
+
