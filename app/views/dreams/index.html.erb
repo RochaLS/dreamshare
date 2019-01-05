@@ -1,7 +1,22 @@
 <h1>All Dreams</h1>
 <% @dreams.each do |dream|  %>
-<%= dream.title %>
-<%= dream.description %>
-<%= dream.user_id %>
+  <p><%= dream.title %></p>
+  <p><%= dream.description %></p>
+  <p><%= dream.user.first_name %></p>
+  <p><%= dream.created_at %></p>
+  <% if policy(dream).edit? %>
+    <%= link_to "Update", edit_dream_path(dream) %>
+  <% end %>
+  <% if policy(dream).destroy? %>
+    <%= link_to 'Delete', dream, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <% end %>
 <% end  %>
+
+<hr>
+
+ <% if policy(Dream).new? %>
+ <%= link_to 'Post a new Dream', new_dream_path %>
+ <% end %>
+
+
 

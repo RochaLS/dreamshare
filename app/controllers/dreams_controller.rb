@@ -1,25 +1,27 @@
 class DreamsController < ApplicationController
   before_action :set_dreams, only: [:show, :edit, :update, :destroy]
   def index
-    @dreams = Dream.all
+    # @dreams = Dream.all
+    @dreams = policy_scope(Dream).order(created_at: :desc)
   end
 
-   def new
+  def new
     @dream = Dream.new
+    authorize @dream
   end
 
   def create
     @dream = Dream.new(dream_params)
     @dream.user = current_user
+    authorize @dream
     @dream.save
-    redirect_to dreams_path
+    redirect_to dream_path(@dream)
   end
 
   def edit
   end
 
   def show
-    set_dreams
   end
 
   def update
@@ -34,6 +36,7 @@ class DreamsController < ApplicationController
 
   def set_dreams
    @dream = Dream.find(params[:id])
+   authorize @dream
   end
 
   def dream_params
