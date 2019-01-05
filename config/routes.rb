@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  authenticated :user do
+    root 'dreams#index', as: :authenticated_root
+  end
+
   root to: 'pages#home'
 
   resources :dreams
