@@ -3,7 +3,7 @@
   <p><%= dream.title %></p>
   <p><%= dream.description %></p>
   <p><%= dream.user.first_name %></p>
-  <p><%= dream.created_at %></p>
+  <p><%= dream.created_at.strftime("%d/%m") %></p>
   <% if policy(dream).edit? %>
     <%= link_to "Update", edit_dream_path(dream) %>
   <% end %>
