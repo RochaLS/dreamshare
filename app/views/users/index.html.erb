@@ -3,3 +3,7 @@
 <p><%= user.email %></p>
 <p><%= user.last_sign_in_at %></p>
 <% end %>
+
+<% if policy(Dream).index? %>
+ <p><%= link_to 'Back to dream index', dreams_path %></p>
+ <% end %>
