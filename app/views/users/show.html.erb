@@ -14,3 +14,8 @@
   <%= link_to 'Delete', dream, method: :delete, data: { confirm: 'Are you sure?'} %>
   <% end %>
 <% end %>
+
+<% if policy(Dream).index? %>
+ <p><%= link_to 'Back to index', dreams_path %></p>
+ <% end %>
+
