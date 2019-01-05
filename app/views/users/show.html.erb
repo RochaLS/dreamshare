@@ -1,0 +1,16 @@
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>
+
+
+
+<p>Your dreams:</p>
+<% @user.dreams.each do |dream| %>
+  <p><%= dream.title %></p>
+  <p><%= dream.description %></p>
+  <p><%= dream.created_at %></p>
+  <% if policy(dream).edit? %>
+      <%= link_to "Update", edit_dream_path(dream) %>
+    <% end %>
+  <% if policy(dream).destroy? %>
+  <%= link_to 'Delete', dream, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <% end %>
+<% end %>
