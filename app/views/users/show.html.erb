@@ -3,7 +3,7 @@
 
 
 <p>Your dreams:</p>
-<% @user.dreams.each do |dream| %>
+<% @user.dreams.reverse_each do |dream| %>
   <p><%= dream.title %></p>
   <p><%= dream.description %></p>
   <p><%= dream.created_at %></p>
