@@ -15,7 +15,7 @@ class DreamsController < ApplicationController
     @dream.user = current_user
     authorize @dream
     @dream.save
-    redirect_to dream_path(@dream)
+    redirect_to user_path(current_user)
   end
 
   def edit
