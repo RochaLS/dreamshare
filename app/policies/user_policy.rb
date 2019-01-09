@@ -10,6 +10,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    record == user || user.admin
   end
 end
