@@ -15,11 +15,7 @@ class DreamsController < ApplicationController
     @dream.user = current_user
     authorize @dream
     @dream.save
-    if @dream.private == true
-      redirect_to user_path(current_user)
-    else
-      redirect_to dreams_path
-    end
+    redirect_to dream_path(@dream)
   end
 
   def edit
@@ -44,6 +40,6 @@ class DreamsController < ApplicationController
   end
 
   def dream_params
-    params.require(:dream).permit(:title, :description, :private)
+    params.require(:dream).permit(:title, :description)
   end
 end
