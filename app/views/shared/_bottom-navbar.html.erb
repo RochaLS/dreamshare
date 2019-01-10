@@ -1,1 +1,7 @@
-_bottom-navbar.html.erb
+<div class="navbar">
+  <ul class="list-inline">
+    <li><%= link_to '<i class="fas fa-home"></i>'.html_safe, dreams_path %></li>
+    <li><%= link_to '<i class="fas fa-plus-circle"></i>'.html_safe, new_dream_path  %></li>
+    <li><%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user) %></li>
+  </ul>
+</div>
