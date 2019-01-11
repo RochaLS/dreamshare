@@ -1,1 +1,7 @@
-<div class="navbar"></div>
+<% if current_user %>
+<div class="navbar">
+  <%= link_to '<i class="fas fa-home"></i>'.html_safe, dreams_path %>
+  <%= link_to '<i class="fas fa-plus-circle"></i>'.html_safe, new_dream_path %>
+  <%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user) %>
+</div>
+<% end %>
