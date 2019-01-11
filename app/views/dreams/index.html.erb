@@ -1,17 +1,31 @@
-<h1>All Dreams</h1>
-<% @dreams.each do |dream|  %>
-<% if dream.private == false %>
-    <p><%= link_to dream.title, dream_path(dream) %></p>
-    <p><%= dream.description %></p>
-    <p><%= dream.user.first_name %></p>
-    <p><%= dream.created_at.strftime("%d/%m") %></p>
-    <% if policy(dream).edit? %>
-      <p><%= link_to "Edit", edit_dream_path(dream) %></p>
-    <% end %>
-  <% end %>
-<% end  %>
+<div class="container">
+  <div class="text-center">
+    <h1 class="header">Dreams shared by other dreamers <span class="ec ec-rocket"></span></h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% @dreams.each do |dream|  %>
+        <% if dream.private == false %>
+        <%= link_to dream_path(dream) do %>
+          <div class="card">
+              <h2 class="text-center"><%= dream.title %></h2>
+              <p class="description"><%= dream.description[0..79] %>
+                <% if dream.description.size >= 79 %>
+                  <span>...</span>
+                <% end %>
+              <p class="date"><%= dream.created_at.strftime("%d/%m") %></p>
+              <% if policy(dream).edit? %>
+                <p class="edit-button"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_dream_path(dream) %></p>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end  %>
+    </div>
+  </div>
 
- <% if current_user.admin?%>
- <p><%= link_to 'User index(admin only)', users_path %></p>
- <% end %>
+   <% if current_user.admin?%>
+   <p><%= link_to 'User index(admin only)', users_path %></p>
+   <% end %>
+</div>
 

@@ -1,0 +1,50 @@
+.card {
+  background-color: white;
+  width: 100%;
+  border-top: 5px solid $light-green;
+  position: relative;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
+  height: 139px;
+  margin: 15px 0px;
+}
+
+.card h2 {
+  font-size: 26px;
+  color: $black;
+  font-weight: bold;
+  margin-top: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.date {
+  font-size: 26px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: $dark-blue;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 18px;
+  padding-left: 5px;
+  position: absolute;
+  bottom: 0;
+}
+
+.edit-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.card i {
+  color: $black;
+}
+
+.card a:active {
+  text-decoration: none;
+  color: $black;
+}
