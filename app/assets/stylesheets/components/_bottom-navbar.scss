@@ -1,2 +1,29 @@
+.navbar {
+  margin-bottom: 0;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  height: 82px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+}
 
+.navbar i {
+  padding: 15px 45px;
+  font-size: 30px;
+  color: $black;
+}
+
+.navbar i:active {
+  color: $light-green
+}
+
+.avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
 
