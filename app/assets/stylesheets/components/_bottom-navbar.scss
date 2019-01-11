@@ -5,10 +5,10 @@
   display: flex;
   justify-content: space-between;
   height: 82px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   align-items: center;
+  position: sticky;
+  bottom: 0;
 }
 
 .navbar i {
@@ -26,4 +26,5 @@
   width: 35px;
   border-radius: 50%;
 }
+
 
