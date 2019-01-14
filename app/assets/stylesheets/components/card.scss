@@ -3,9 +3,10 @@
   width: 100%;
   border-top: 5px solid $light-green;
   position: relative;
-  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.1);
   height: 139px;
   margin: 15px 0px;
+  border-radius: 2px;
 }
 
 .card h2 {
