@@ -1,31 +1,45 @@
-<% if @user.photo.url.nil? %>
-<%= cl_image_tag("default_avatar.png") %>
-<% else %>
- <%= cl_image_tag(@user.photo, :width=>200, :height=>200) %>
- <% end %>
+<div class="banner-profile" style="background-image: url(https://images.unsplash.com/photo-1547250859-b4f2cc3e97cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1893&q=80)">
+  <% if @user.photo.url.nil? %>
+    <%= cl_image_tag "default_avatar.png", class: "avatar-pic", :width=>200, :height=>200 %>
+    <% else %>
+     <%= cl_image_tag @user.photo, :width=>200, :height=>200, class: "avatar-pic" %>
+     <% end %>
+  </div>
+</div>
 
- <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+<div class="container">
+
+   <h2 class="text-center user-name"><%= @user.first_name %> <%= @user.last_name %></h2>
 
 
 
-<p>Your dreams:</p>
-<% @user.dreams.reverse_each do |dream| %>
-  <p><%= dream.title %></p>
-  <p><%= dream.description %></p>
-  <p><%= dream.created_at %></p>
-  <% if policy(dream).edit? %>
-      <%= link_to "Update", edit_dream_path(dream) %>
-    <% end %>
-  <% if policy(dream).destroy? %>
-  <%= link_to 'Delete', dream, method: :delete, data: { confirm: 'Are you sure?'} %>
-  <% end %>
-<% end %>
-
-<% if policy(Dream).index? %>
- <p><%= link_to 'Back to index', dreams_path %></p>
- <% end %>
-
- <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+  <p class="profile-heading">My dreams <span class="ec ec-rocket"></span></p>
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @user.dreams.empty? %>
+        <p class="profile-subheading">Sorry, but you don't have any dreams yet! <span class="ec ec-disappointed-relieved"></span></p>
+        <% else %>
+        <% @user.dreams.reverse.each do |dream|  %>
+          <%= link_to dream_path(dream) do %>
+            <div class="card">
+                <h2 class="text-center"><%= dream.title %></h2>
+                <p class="description"><%= dream.description[0..79] %>
+                  <% if dream.description.size >= 79 %>
+                    <span>...</span>
+                  <% end %>
+                <p class="date"><%= dream.created_at.strftime("%d/%m") %></p>
+                <% if policy(dream).edit? %>
+                  <p class="edit-button"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_dream_path(dream) %></p>
                 <% end %>
+                  <% if policy(dream).destroy? %>
+                    <p class="destroy-button"><%= link_to '<i class="fas fa-trash"></i>'.html_safe, dream, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+                <% end %>
+              <% end %>
+            </div>
+        <% end  %>
+      <% end %>
+    </div>
+  </div>
+   <p class="signout-button"><%= link_to '<i class="fas fa-sign-out-alt"></i>'.html_safe, destroy_user_session_path, method: :delete %></p>
+</div>
 
