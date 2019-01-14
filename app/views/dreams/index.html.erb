@@ -17,6 +17,9 @@
               <% if policy(dream).edit? %>
                 <p class="edit-button"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_dream_path(dream) %></p>
               <% end %>
+              <% if policy(dream).destroy? %>
+                    <p class="destroy-button"><%= link_to '<i class="fas fa-trash"></i>'.html_safe, dream, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+                <% end %>
             <% end %>
           </div>
         <% end %>

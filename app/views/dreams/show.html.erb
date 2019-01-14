@@ -1,17 +1,15 @@
-<div class="show">
-  <h1><%= @dream.title %></h1>
-  <h3><%= @dream.description %></h3>
-  <p> by: <%= @dream.user.first_name %></p>
-
-  <% if policy(@dream).edit? %>
-      <p><%= link_to "Update", edit_dream_path(@dream) %></p>
-    <% end %>
-
-  <% if policy(@dream).destroy? %>
-      <p><%= link_to 'Delete', @dream, method: :delete, data: { confirm: 'Are you sure?'} %></p>
-    <% end %>
-
-  <% if policy(Dream).index? %>
-   <p><%= link_to 'Back to index', dreams_path %></p>
+<div class="container">
+  <div class="dream-content">
+    <h1 class="text-center main-heading-show"><%= @dream.title %></h1>
+    <p><%= @dream.created_at.strftime("%b %d, %Y") %></p>
+    <p><%= @dream.description %></h3>
+    <p> By: <%= @dream.user.first_name %></p>
+   </div>
+   <hr>
+   <% if policy(@dream).edit? %>
+    <p class="showpage-buttons"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_dream_path(@dream) %>
    <% end %>
+   <% if policy(@dream).destroy? %>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, @dream, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+    <% end %>
 </div>

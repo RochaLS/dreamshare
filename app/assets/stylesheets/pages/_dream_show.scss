@@ -1,0 +1,19 @@
+.main-heading-show {
+  font-size: 28px;
+}
+
+.dream-content {
+  color: white;
+}
+
+.showpage-buttons .fa-trash {
+  margin-left: 10px;
+}
+
+.showpage-buttons i {
+  color: white;
+  &:active {
+    color: $light-green;
+  }
+}
+
