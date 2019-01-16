@@ -18,7 +18,7 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true ,
-                      input_html: { autocomplete: "email" }, input_html: { class: 'form-input'}, placeholder: "youremail@gmail.com" %>
+                      input_html: { autocomplete: "email" }, input_html: { class: 'form-input'}, placeholder: "john@gmail.com" %>
           <%= f.input :password,
                       required: true,
                       placeholder: "6 characters minimum",
@@ -28,6 +28,9 @@
                       placeholder: "**********",
                       input_html: { autocomplete: "new-password" }, input_html: { class: 'form-input'}%>
           <%= f.input :photo %>
+          <div class="user-avatar">
+            <i class="fas fa-camera-retro"></i>
+          </div>
           <%= f.input :photo_cache, as: :hidden %>
         </div>
 
