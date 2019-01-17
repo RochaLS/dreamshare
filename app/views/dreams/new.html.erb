@@ -6,13 +6,15 @@
         <%= simple_form_for @dream do |f| %>
           <%= f.input :title, input_html: { class: 'form-input'} %>
           <%= f.input :description, as: :text, input_html: { class: 'form-input'} %>
-           <%= f.input :private, as: :select, input_html: { class: 'form-input'}  %>
+           <%= f.input :private, as: :select, label: "Would you like to set your Dream as private?", input_html: { class: 'form-input'}  %>
          </div>
         <%= f.button :submit, "Add Dream", class: "form-button" %>
       <% end %>
     </div>
   </div>
 </div>
+
+<%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back, class: "back-icon" %>
 
 <% if current_user %>
 <nav class="navbar">
@@ -21,3 +23,4 @@
   <%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user) %>
 </nav>
 <% end %>
+
