@@ -14,11 +14,15 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     @dream.user = current_user
     authorize @dream
-    @dream.save
-    if @dream.private == true
-      redirect_to user_path(current_user)
+    if @dream.save
+      if @dream.private == true
+        redirect_to user_path(current_user)
+      else
+        redirect_to dreams_path
+      end
+
     else
-      redirect_to dreams_path
+      render :new
     end
   end
 
@@ -35,7 +39,11 @@ class DreamsController < ApplicationController
 
   def destroy
     @dream.destroy
-    redirect_to dreams_path
+    if @dream.private == true
+      redirect_to user_path(current_user)
+    else
+      redirect_to dreams_path
+    end
   end
 
   def set_dreams
