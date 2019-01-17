@@ -13,3 +13,11 @@
     <%= link_to '<i class="fas fa-trash"></i>'.html_safe, @dream, method: :delete, data: { confirm: 'Are you sure?'} %></p>
     <% end %>
 </div>
+
+<% if current_user %>
+<nav class="navbar">
+ <%= link_to '<i class="fas fa-home"></i>'.html_safe, dreams_path, class: 'home-active' %>
+  <%= link_to '<i class="fas fa-plus-circle"></i>'.html_safe, new_dream_path %>
+  <%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user) %>
+</nav>
+<% end %>
