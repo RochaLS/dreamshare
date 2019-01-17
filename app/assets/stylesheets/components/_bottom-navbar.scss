@@ -15,7 +15,14 @@
   padding: 15px 45px;
   font-size: 30px;
   color: $black;
+  &:hover {
+    color: $light-green;
+  }
 }
+
+// .navbar a {
+//   background-color: black;
+// }
 
 .navbar i:active {
   color: $light-green
@@ -28,3 +35,6 @@
 }
 
 
+.icon-active {
+  border-top: 3px solid $light-green;
+}

@@ -44,3 +44,12 @@
    <p class="edit-profile-button"><%= link_to '<i class="fas fa-cog"></i>'.html_safe,  edit_user_registration_path %></p>
 </div>
 
+<% if current_user %>
+<nav class="navbar">
+ <%= link_to '<i class="fas fa-home"></i>'.html_safe, dreams_path %>
+  <%= link_to '<i class="fas fa-plus-circle"></i>'.html_safe, new_dream_path %>
+  <%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user),class: 'icon-active' %>
+</nav>
+<% end %>
+
+
