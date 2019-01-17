@@ -3,7 +3,7 @@
     <h1 class="text-center main-heading-show"><%= @dream.title %></h1>
     <p><%= @dream.created_at.strftime("%b %d, %Y") %></p>
     <p><%= @dream.description %></h3>
-    <p> By: <%= @dream.user.first_name %></p>
+    <p> By: <%= @dream.user.username %></p>
    </div>
    <hr>
    <% if policy(@dream).edit? %>

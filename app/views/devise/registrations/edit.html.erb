@@ -13,9 +13,10 @@
               <%= f.input :first_name, required: true, placeholder: "John", input_html: { class: 'form-input'} %>
             </div>
             <div class="col-xs-6">
-              <%= f.input :last_name, required: true, placeholder: "Doe",  input_html: { class: 'form-input'}%>
+              <%= f.input :last_name, required: true,  input_html: { class: 'form-input'}%>
             </div>
           </div>
+          <%= f.input :username, required: true, placeholder: "John123", input_html: { class: 'form-input'} %>
           <%= f.input :email, required: true, autofocus: true,  input_html: { class: 'form-input'} %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -41,10 +42,9 @@
                       <%= f.input :photo_cache, as: :hidden %>
                     </div>
                      <div class="form-actions">
-          <%= f.button :submit, "Update Information", class: "edit-form-button" %>
+          <%= f.button :submit, "Update Information", class: "form-button" %>
             </div>
           </div>
-          <%= devise_error_messages! %>
 
 
 

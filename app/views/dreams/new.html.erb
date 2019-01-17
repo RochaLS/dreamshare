@@ -4,9 +4,9 @@
       <h2 class="text-center form-heading">Add a Dream</h2>
       <div class="form-inputs">
         <%= simple_form_for @dream do |f| %>
-          <%= f.input :title, input_html: { class: 'form-input'} %>
-          <%= f.input :description, as: :text, input_html: { class: 'form-input'} %>
-           <%= f.input :private, as: :select, label: "Would you like to set your Dream as private?", input_html: { class: 'form-input'}  %>
+          <%= f.input :title, required: true, input_html: { class: 'form-input'} %>
+          <%= f.input :description, as: :text, required: true, input_html: { class: 'form-input'}%>
+           <%= f.input :private, as: :select, label: "Would you like to set your Dream as private?", required: true, error: "This field can't be blank", input_html: { class: 'form-input'}  %>
          </div>
         <%= f.button :submit, "Add Dream", class: "form-button" %>
       <% end %>
