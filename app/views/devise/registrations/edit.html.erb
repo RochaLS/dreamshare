@@ -55,6 +55,9 @@
   </div>
 </div>
 
+<%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back, class: "back-icon" %>
+
+
 <% if current_user %>
 <nav class="navbar">
  <%= link_to '<i class="fas fa-home"></i>'.html_safe, dreams_path, class: 'home-active' %>
