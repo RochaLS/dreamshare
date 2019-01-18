@@ -3,9 +3,9 @@
   <div class="banner">
       <div class="homepage-content">
         <h1>DreamSharing</h1>
-        <h3>Sleep, Dream and Share it!</h3>
-        <%= link_to 'Share your Dreams', new_user_registration_path,class: 'btn btn-lg dreamshare-primary' %>
-        <%= link_to 'Log in',  new_user_session_path, class: 'btn  dreamshare-secondary' %>
+        <h3> <%=  I18n.t :home_subheading %> </h3>
+        <%= link_to t('main_button'), new_user_registration_path,class: 'btn btn-lg dreamshare-primary' %>
+        <%= link_to t("secondary_button"),  new_user_session_path, class: 'btn  dreamshare-secondary' %>
       </div>
   </div>
 </div>

@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  index_heading: "Dreams shared by other dreamers"
+  my_dreams: "My dreams"
+  profile_picture: "Profile picture"
+  selected_files: "Picture(s) selected"
+  dream_create: "Add Dream"
+  create_dream: "Add a Dream"
+  user_create: "Sign Up"
+  user_edit: "Save changes"
+  edit_account: "Edit account"
+  dreams_none: "Sorry, but you don't have any dreams yet!"
+  home_subheading: "Sleep, Dream and Share it!"
+  secondary_button: "Log in"
+  main_button: "Share your Dreams"

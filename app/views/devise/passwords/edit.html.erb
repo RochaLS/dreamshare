@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2 class="text-center form-heading">Change your password</h2>
+      <h2 class="text-center form-heading"><%= t(".title") %><</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Change my password", class: 'form-button' %>
+          <%= f.button :submit, t(".submit"), class: 'form-button' %>
         </div>
       <% end %>
       <div class="form-link">
