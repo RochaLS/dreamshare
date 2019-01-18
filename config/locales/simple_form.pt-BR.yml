@@ -1,0 +1,33 @@
+pt-BR:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'obrigatório'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Por favor cheque os problemas abaixo:"
+
+    labels:
+      dream:
+        title: "Título"
+        description: "Descrição"
+        private: "Você gostaria de definir seu sonho como privado?"
+      user:
+        first_name: "Primeiro nome"
+        last_name: "Sobrenome"
+        username: "Nome de usuário"
+        email: "Email"
+        password: "Senha"
+        edit:
+          password: "Nova Senha"
+        password_confirmation: "Confirmação de senha"
+        current_password: "Senha atual"
+
+
+
+
+

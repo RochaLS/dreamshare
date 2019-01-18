@@ -13,11 +13,11 @@
 
 
 
-  <p class="profile-heading">My dreams <span class="ec ec-rocket"></span></p>
+  <p class="profile-heading"> <%= I18n.t :my_dreams %> <span class="ec ec-rocket"></span></p>
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <% if @user.dreams.empty? %>
-        <p class="profile-subheading">Sorry, but you don't have any dreams yet! <span class="ec ec-disappointed-relieved"></span></p>
+        <p class="profile-subheading"> <%= I18n.t :dreams_none %> <span class="ec ec-disappointed-relieved"></span></p>
         <% else %>
         <% @user.dreams.reverse.each do |dream|  %>
           <%= link_to dream_path(dream) do %>

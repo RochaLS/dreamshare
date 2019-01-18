@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2 class="text-center form-heading">Add a Dream</h2>
+      <h2 class="text-center form-heading"><%= I18n.t :create_dream %></h2>
       <div class="form-inputs">
         <%= simple_form_for @dream do |f| %>
           <%= f.input :title, input_html: { class: 'form-input'} %>
           <%= f.input :description, as: :text, input_html: { class: 'form-input'} %>
            <%= f.input :private, as: :select, input_html: { class: 'form-input'}  %>
          </div>
-        <%= f.button :submit, "Add Dream", class: "form-button" %>
+        <%= f.button :submit, t("dream_create"), class: "form-button" %>
       <% end %>
     </div>
   </div>

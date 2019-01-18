@@ -1,0 +1,33 @@
+pt-BR:
+  index_heading: Sonhos compartilhados por outros sonhadores
+  my_dreams: "Meus sonhos"
+  profile_picture: "Foto de perfil"
+  selected_files: "Foto(s) selecionada(s)"
+  form_heading_signup: "Criar conta"
+  create_dream: "Adicionar Sonho"
+  dream_create: "Adicionar Sonho"
+  user_create: Criar conta
+  user_edit: "Salvar informações"
+  edit_account: "Editar conta"
+  dreams_none: "Que pena, você ainda não adicionou nenhum sonho!"
+  home_subheading: "Durma, Sonhe e Compartilhe!"
+  secondary_button: "Entrar"
+  main_button: "Compartilhe seus Sonhos"
+
+  activerecord:
+    models:
+      dream: "sonho"
+      user: "usuário"
+    attributes:
+      dream:
+        title: "Título"
+        description: "Descrição"
+      user:
+        first_name: "Primeiro nome"
+        last_name: "Sobrenome"
+        username: "Nome de Usuário"
+        password: "Senha"
+        photo: "Foto"
+
+
+

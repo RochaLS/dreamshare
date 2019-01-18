@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-      <h2 class="text-center form-heading">Edit <%= resource_name.to_s.humanize %></h2>
+      <h2 class="text-center form-heading"><%= I18n.t :edit_account%></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -35,14 +35,14 @@
                       input_html: { autocomplete: "current-password" },  input_html: { class: 'form-input'} %>
                        <%= f.input :photo %>
                       <div class="user-avatar">
-                        <p>Avatar picture</p>
+                        <p> <%= I18n.t :profile_picture %> </p>
                         <i class="fas fa-camera-retro"></i>
-                        <span id="file-count">0</span><span>  selected files</span>
+                        <span id="file-count">0</span><span>  <%= I18n.t :selected_files %> </span>
                       </div>
                       <%= f.input :photo_cache, as: :hidden %>
                     </div>
                      <div class="form-actions">
-          <%= f.button :submit, "Update Information", class: "form-button" %>
+          <%= f.button :submit, t("user_edit"), class: "form-button" %>
             </div>
           </div>
 
