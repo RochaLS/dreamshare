@@ -9,8 +9,8 @@
         <%= link_to dream_path(dream) do %>
           <div class="card">
               <h2 class="text-center"><%= dream.title %></h2>
-              <p class="description"><%= dream.description[0..79] %>
-                <% if dream.description.size >= 79 %>
+              <p class="description"><%= dream.description[0..74] %>
+                <% if dream.description.size >= 74 %>
                   <span>...</span>
                 <% end %>
               <p class="date"><%= dream.created_at.strftime("%d/%m") %></p>
