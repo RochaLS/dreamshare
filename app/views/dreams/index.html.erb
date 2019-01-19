@@ -8,8 +8,8 @@
         <% if dream.private == false %>
         <%= link_to dream_path(dream) do %>
           <div class="card">
-              <h2 class="text-center"><%= dream.title %></h2>
-              <p class="description"><%= dream.description[0..74] %>
+              <h2 class="text-center"><%= dream.title.capitalize %></h2>
+              <p class="description"><%= dream.description.capitalize[0..74] %>
                 <% if dream.description.size >= 74 %>
                   <span>...</span>
                 <% end %>
