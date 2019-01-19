@@ -10,7 +10,11 @@ class DreamPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    if record.private == true
+      user_is_owner_or_admin?
+    else
+      return true
+    end
   end
 
   def create?
