@@ -37,6 +37,9 @@
           <%= f.input :photo_cache, as: :hidden %>
         </div>
 
+        <p class="statements statement-heading"><%= I18n.t :statement_heading %></p>
+        <p class="statements"><%= I18n.t :i_read %> <a href="dreamsharing.space/terms_and_conditions.html"><%= I18n.t :terms_and_conditions %></a> <%= I18n.t :and %> <a href="dreamsharing.space.privacy.html"><%= I18n.t :privacy %></a></p>
+
         <div class="form-actions">
           <%= f.button :submit, t("user_create"), class: "form-button" %>
         </div>

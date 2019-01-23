@@ -19,3 +19,14 @@ input[type="file"] {
   }
 }
 
+.statements {
+  color: white;
+}
+
+.statements a {
+  color: $light-green;
+}
+
+.statement-heading {
+  margin-top: 10px;
+}
