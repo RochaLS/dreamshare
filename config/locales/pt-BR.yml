@@ -13,6 +13,11 @@ pt-BR:
   home_subheading: "Durma, Sonhe e Compartilhe!"
   secondary_button: "Entrar"
   main_button: "Compartilhe seus Sonhos"
+  statement_heading: "Clicando em 'Criar conta' você concorda que:"
+  i_read: "Eu li os"
+  and: "e"
+  privacy: "Política de Privacidade"
+  terms_and_conditions: "Termos e Condições"
 
   activerecord:
     models:
